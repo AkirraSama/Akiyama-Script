@@ -1,0 +1,65 @@
+local gui = Instance.new("ScreenGui")
+local frame = Instance.new("Frame")
+local image = Instance.new("ImageLabel")
+local toggle = Instance.new("TextButton")
+local zoomIn = Instance.new("TextButton")
+local zoomOut = Instance.new("TextButton")
+
+-- Customizable Variables
+local hideKey = Enum.KeyCode.RightControl
+local initialImageSize = UDim2.new(0.5, 0, 0.5, 0)
+
+-- GUI Creation
+gui.Parent = game.StarterGui
+frame.Parent = gui
+frame.Size = initialImageSize
+frame.Position = UDim2.new(0.25, 0, 0.25, 0)
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+frame.BackgroundTransparency = 0.8
+
+-- image.image = "your image from web"
+image.Parent = frame
+image.Size = UDim2.new(1, 0, 1, 0)
+image.BackgroundTransparency = 1
+image.Image = "https://i.redd.it/qnycl4brr1r91.png"
+image.Visible = false
+
+toggle.Parent = frame
+toggle.Size = UDim2.new(0.25, 0, 0.1, 0)
+toggle.Position = UDim2.new(0.375, 0, 0.9, 0)
+toggle.Text = "Turn On"
+toggle.TextColor3 = Color3.new(1, 1, 1)
+toggle.TextStrokeColor3 = Color3.new(0, 0, 0)
+toggle.BackgroundColor3 = Color3.new(0, 0, 0)
+toggle.BackgroundTransparency = 0.8
+
+zoomIn.Parent = frame
+zoomIn.Size = UDim2.new(0.125, 0, 0.1, 0)
+zoomIn.Position = UDim2.new(0.75, 0, 0.9, 0)
+zoomIn.Text = "Zoom In"
+zoomIn.TextColor3 = Color3.new(1, 1, 1)
+zoomIn.TextStrokeColor3 = Color3.new(0, 0, 0)
+zoomIn.BackgroundColor3 = Color3.new(0, 0, 0)
+zoomIn.BackgroundTransparency = 0.8
+
+zoomOut.Parent = frame
+zoomOut.Size = UDim2.new(0.125, 0, 0.1, 0)
+zoomOut.Position = UDim2.new(0.625, 0, 0.9, 0)
+zoomOut.Text = "Zoom Out"
+zoomOut.TextColor3 = Color3.new(1, 1, 1)
+zoomOut.TextStrokeColor3 = Color3.new(0, 0, 0)
+zoomOut.BackgroundColor3 = Color3.new(0, 0, 0)
+zoomOut.BackgroundTransparency = 0.8
+
+-- Button Functions
+function toggle.MouseButton1Click()
+    if image.Visible == false then
+        image.Visible = true
+        toggle.Text = "Turn Off"
+    else
+        image.Visible = false
+        toggle.Text = "Turn On"
+    end
+end
+
+function
